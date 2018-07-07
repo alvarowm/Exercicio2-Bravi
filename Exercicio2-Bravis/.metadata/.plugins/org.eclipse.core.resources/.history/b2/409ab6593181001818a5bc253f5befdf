@@ -1,0 +1,32 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.bravi.exercicio1.models.Person;
+
+public abstract class AService {
+	
+	JpaRepository service;
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public Object findByID(Long id) {
+		return service.getOne(id);
+	}
+
+	@Transactional(readOnly = true)
+	public Object save(Object o) {
+		return service.save(o);
+	}
+	
+	@Transactional(readOnly = true)
+	public Person update(Object o) {
+		Person p = service.getOne(o.);
+		if (p == null)
+			return null;
+		
+		return service.save(p);
+	}
+
+}

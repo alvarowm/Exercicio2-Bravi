@@ -1,0 +1,8 @@
+package br.bravi.exercicio1.models;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Person {
+
+}

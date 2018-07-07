@@ -1,0 +1,49 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.bravi.exercicio1.models.Person;
+import br.bravi.exercicio1.repositories.PersonRepository;
+
+@Service
+public class PersonService {
+
+	@Autowired
+	private PersonRepository personRepository;
+
+	
+	@Transactional(readOnly = true)
+	public Person findByID(Long id) {
+		Person p = personRepository.findOne(id);
+		return p;
+	}
+
+	@Transactional(readOnly = true)
+	public Person save(Person p) {
+		return personRepository.save(p);
+	}
+
+	@Transactional(readOnly = true)
+	public Person update(Person person) {
+		Person p = personRepository.findOne(person.getId());
+		if (p == null)
+			return null;
+		
+		//delete(p);
+
+		return personRepository.save(person);
+	}
+
+	@Transactional(readOnly = true)
+	public void delete(Person p) {
+		personRepository.delete(p);
+	}
+
+	@Transactional(readOnly = true)
+	public void delete(Long id) {
+		personRepository.delete(id);
+	}
+
+}

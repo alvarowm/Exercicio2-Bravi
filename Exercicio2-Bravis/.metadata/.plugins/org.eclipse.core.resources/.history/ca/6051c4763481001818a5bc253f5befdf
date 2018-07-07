@@ -1,0 +1,31 @@
+package br.bravi.exercicio1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import br.bravi.exercicio1.models.Person;
+import br.bravi.exercicio1.services.PersonService;
+
+
+@SpringBootApplication
+public class Application {
+	
+	@Autowired
+	private PersonService service;
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+		
+		
+	}
+	
+	private void salvar () {
+		List contatos = new ArrayList<Contact>();
+		service.save(new Person("Teste", new ArrayList<Contact>()));
+	}
+
+}

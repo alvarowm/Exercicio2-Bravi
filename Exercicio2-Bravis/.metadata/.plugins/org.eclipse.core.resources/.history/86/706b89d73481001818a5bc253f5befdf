@@ -1,0 +1,15 @@
+package br.bravi.exercicio1;
+
+import java.util.ArrayList;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.models.Person;
+
+public class A {
+	
+	private void salvar () {
+		ArrayList<Contact> contatos = new ArrayList<Contact>();
+		service.save(new Person("Teste", contatos));
+	}
+
+}

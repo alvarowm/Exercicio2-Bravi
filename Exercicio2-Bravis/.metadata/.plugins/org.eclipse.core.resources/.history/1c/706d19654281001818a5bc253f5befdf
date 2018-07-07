@@ -1,0 +1,14 @@
+package br.bravi.exercicio1.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.bravi.exercicio1.services.PersonService;
+
+@RestController
+public class ContactController {
+	
+	@Autowired
+	private ContactService service;
+
+}

@@ -1,0 +1,9 @@
+package br.bravi.exercicio1.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.bravi.exercicio1.models.Person;
+
+public interface PersonRepository extends JpaRepository<Person, Long> {
+	
+}

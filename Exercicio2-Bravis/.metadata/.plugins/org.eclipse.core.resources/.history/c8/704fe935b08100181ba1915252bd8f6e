@@ -1,0 +1,31 @@
+package br.bravi.exercicio1;
+
+
+import org.junit.Test;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
+
+
+public class ApplicationTest {
+	
+	static final String LOCALHOST_8080_PERSON_1 = "http://localhost:8080/person/1";
+	static final String LOCALHOST_8080_PERSON = "http://localhost:8080/person/";
+
+	@Test
+	public void testInsercao() {
+		HttpPost request = new HttpPost(LOCALHOST_8080_PERSON);
+		
+	}
+	
+	@Test
+	public void testFindByID() {
+		
+		
+	}
+	
+	
+}

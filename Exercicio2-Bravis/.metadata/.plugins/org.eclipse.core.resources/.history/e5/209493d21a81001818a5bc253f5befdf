@@ -1,0 +1,15 @@
+package br.bravi.exercicio1.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PERSON")
+public class Person {
+	
+	private String name;
+	private List<Contact> contatcs;
+	
+	
+
+}

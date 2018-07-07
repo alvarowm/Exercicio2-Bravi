@@ -1,0 +1,58 @@
+package br.bravi.exercicio1.controllers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.models.Person;
+import br.bravi.exercicio1.services.PersonService;
+
+@RestController
+public class PersonController {
+
+	@Autowired
+	private PersonService service;
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<String>  getHomePage() {
+		return new ResponseEntity<String>("Exercício 2", HttpStatus.OK);
+    }
+	
+	@RequestMapping("/person/{id}")
+    public ResponseEntity<Person> getPerson(@PathVariable("id") Long id) {
+		List<Contact> contatos = new ArrayList<Contact>();
+		contatos.add(new Contact("Zap", "123546"));
+		Person p = (Person) service.save(new Person("Teste", contatos));
+		
+        return new ResponseEntity<Person>((Person) service.findByID(p.getId()),HttpStatus.CREATED);
+    }
+	
+	@PostMapping("/person")
+    public Person savePerson(@RequestBody Person person) {
+        return (Person) service.save(person);
+    }
+	
+	@PutMapping("/person/{id}")
+    public Person updatePerson(@RequestBody Person person, @PathVariable("id") Long id) {
+        return (Person) service.update(person, id);
+    }
+	
+	@PostMapping("/person/")
+    public Person deletePerson(@RequestBody Person person) {
+        return (Person) service.save(person);
+    }
+	
+	
+
+}

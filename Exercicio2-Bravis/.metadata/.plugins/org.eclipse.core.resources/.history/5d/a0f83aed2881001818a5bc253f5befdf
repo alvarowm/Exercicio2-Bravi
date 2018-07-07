@@ -1,0 +1,19 @@
+package br.bravi.exercicio1;
+
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.bravi.exercicio1.services.PersonService;
+
+
+public class ApplicationTest {
+	
+	@Autowired
+	private PersonService service;
+
+	@Test
+	public void testInsercoes() {
+		
+	}
+}

@@ -1,0 +1,26 @@
+package br.bravi.exercicio1;
+
+
+import org.junit.Test;
+
+
+public class ApplicationTest {
+	
+	static final String LOCALHOST_8080_PERSON_1 = "http://localhost:8080/person/1";
+	static final String LOCALHOST_8080_PERSON = "http://localhost:8080/person/";
+	
+	
+
+	@Test
+	public void testInsercao() {
+		
+	}
+	
+	@Test
+	public void testFindByID() {
+		
+		
+	}
+	
+	
+}

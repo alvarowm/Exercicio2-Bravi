@@ -1,0 +1,22 @@
+package br.bravi.exercicio1;
+
+import org.springframework.context.annotation.Bean;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.repositories.ContactRepository;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+    extends TestCase
+{
+	@Bean
+   public void testInsercoes(ContactRepository repository) {
+		Contact contact = repository.save(new Contact("Tel", "1234-5678"));
+		repository.getOne(contact.getContactID());
+   }
+}

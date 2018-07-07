@@ -1,0 +1,47 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.repositories.ContactRepository;
+
+@Service
+public class ContactService {
+	
+	@Autowired
+    private ContactRepository contactRepository;
+	
+	@Transactional(readOnly = true)
+	public Contact findByID(Long id) {
+		return contactRepository.findOne(id);
+	}
+
+	@Transactional(readOnly = true)
+	public Contact save(Contact c) {
+		return contactRepository.save(c);
+	}
+
+	@Transactional(readOnly = true)
+	public Contact update(Contact contact) {
+		Contact c = contactRepository.findOne(contact.getId());
+		if (c == null)
+			return null;
+
+		delete(c);
+		
+		return contactRepository.save(contact);
+	}
+
+	@Transactional(readOnly = true)
+	public void delete(Contact c) {
+		contactRepository.delete(c);
+	}
+
+	@Transactional(readOnly = true)
+	public void delete(Long id) {
+		contactRepository.delete(id);
+	}
+
+}

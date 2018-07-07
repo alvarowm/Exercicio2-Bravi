@@ -1,0 +1,52 @@
+package br.bravi.exercicio1.models;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PERSON")
+public class Person {
+
+    @Id
+    @GeneratedValue
+    @Column(name="person_id")
+    private Long personID;
+	private String name;
+	private List<Contact> contatcs;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Contact> getContatcs() {
+		return contatcs;
+	}
+
+	public void setContatcs(List<Contact> contatcs) {
+		this.contatcs = contatcs;
+	}
+
+	public Long getPersonID() {
+		return personID;
+	}
+
+	public void setPersonID(Long personID) {
+		this.personID = personID;
+	}
+
+	public Person(String name, List<Contact> contatcs) {
+		super();
+		this.name = name;
+		this.contatcs = contatcs;
+	}
+
+}

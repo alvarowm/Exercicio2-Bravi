@@ -1,0 +1,13 @@
+package br.bravi.exercicio1;
+
+
+import org.junit.Test;
+
+
+public class ApplicationTest {
+
+	@Test
+	public void testInsercoes() {
+		
+	}
+}

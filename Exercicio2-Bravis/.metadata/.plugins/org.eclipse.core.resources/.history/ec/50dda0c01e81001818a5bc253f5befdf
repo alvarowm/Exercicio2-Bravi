@@ -1,0 +1,6 @@
+package br.bravi.exercicio1.repositories;
+
+@Transactional
+public interface PersonRepository extends JpaRepository<Product, Long> {
+
+}

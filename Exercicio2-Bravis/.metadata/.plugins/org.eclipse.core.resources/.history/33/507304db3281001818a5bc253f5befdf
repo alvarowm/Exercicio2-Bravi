@@ -1,0 +1,21 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.bravi.exercicio1.repositories.ContactRepository;
+
+@Service
+public class ContactService extends AService{
+	
+	@Autowired
+    private ContactRepository contactRepository;
+
+	public ContactService() {
+		super();
+		repo
+	}
+	
+	
+
+}

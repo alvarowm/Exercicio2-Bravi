@@ -1,0 +1,14 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.bravi.exercicio1.repositories.PersonRepository;
+
+@Component
+public class ContactService {
+	
+	@Autowired
+    private ContactRepository contactRepository;
+
+}

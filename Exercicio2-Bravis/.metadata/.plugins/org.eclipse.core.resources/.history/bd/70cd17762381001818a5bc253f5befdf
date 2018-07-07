@@ -1,0 +1,22 @@
+package br.bravi.exercicio1;
+
+
+import org.junit.Test;
+import org.springframework.context.annotation.Bean;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.repositories.ContactRepository;
+
+
+public class ApplicationTest {
+	
+	@Autowired
+	private ContactRepository repository;
+	
+	@Bean
+	@Test
+	public void testInsercoes() {
+		Contact contact = repository.save(new Contact("Tel", "1234-5678"));
+		System.out.println(repository.getOne(contact.getContactID()).getContactType());
+	}
+}

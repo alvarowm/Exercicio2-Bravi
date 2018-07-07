@@ -1,0 +1,11 @@
+package br.bravi.exercicio1.services;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ContactService {
+	
+	@Autowired
+    private PersonRepository personRepository;
+
+}

@@ -1,0 +1,10 @@
+package br.bravi.exercicio1.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.bravi.exercicio1.models.Contact;
+
+@Repository
+public interface ContactRepository extends JpaRepository<Contact, Long> {
+}

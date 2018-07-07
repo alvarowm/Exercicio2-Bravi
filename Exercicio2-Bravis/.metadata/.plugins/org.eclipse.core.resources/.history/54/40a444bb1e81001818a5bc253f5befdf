@@ -1,0 +1,5 @@
+package br.bravi.exercicio1.repositories;
+
+public interface PersonRepository {
+
+}

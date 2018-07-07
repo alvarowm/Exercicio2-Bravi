@@ -1,0 +1,22 @@
+package br.bravi.exercicio1;
+
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+import br.bravi.exercicio1.models.Contact;
+import br.bravi.exercicio1.models.Person;
+import br.bravi.exercicio1.services.PersonService;
+
+
+public class ApplicationTest {
+
+	@Test
+	public void testInsercoes() {
+		PersonService service = new PersonService();
+		Person p = service.save(new Person("nome", new ArrayList<Contact>()));
+		System.out.println(p);
+		
+	}
+}

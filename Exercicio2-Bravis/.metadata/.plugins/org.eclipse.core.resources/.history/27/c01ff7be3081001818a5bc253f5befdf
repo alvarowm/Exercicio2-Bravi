@@ -1,0 +1,7 @@
+package br.bravi.exercicio1.services;
+
+public abstract class AService {
+	
+	JpaRepository service;
+
+}
