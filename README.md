@@ -1,4 +1,4 @@
-# Exercicio2-Bravis
+# Exercício2-Bravi
 
  Todos os arquivos de configuração do Eclipse foram "commitados", basta dar Git Clone e abrir caso queira usar este IDE.
  Este exercício foi feito com Spring Boot e um banco de dados em memória principal, executando o main da Classe principal
