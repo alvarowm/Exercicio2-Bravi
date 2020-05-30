@@ -1,5 +1,7 @@
 # Exercício2-Bravi
 
+Segunda questão da prova para a empresa Bravi onde se pediu a criação de uma API REST usando Spring Boot, MVC, H2 e Docker.
+
  Todos os arquivos de configuração do Eclipse foram "commitados", basta dar Git Clone e abrir caso queira usar este IDE.
  Este exercício foi feito com Spring Boot e um banco de dados em memória principal, executando o main da Classe principal
 não é necessária nenhuma configuração.
